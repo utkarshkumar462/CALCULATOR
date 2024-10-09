@@ -1,0 +1,85 @@
+body, h1, h2, h3, p, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('02.jpg');
+}
+
+.container {
+    width: 90%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    background-image: url('images.avif');
+    background-size: cover;
+    background-position: center;
+}
+
+.calculator {
+    text-align: center;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+input[type="number"] {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 48%;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+@media (min-width: 600px) {
+    button {
+        width: 22%;
+    }
+}
+
+@media (min-width: 900px) {
+    .container {
+        max-width: 600px;
+    }
+}

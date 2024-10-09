@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <marquee behavior="scroll" direction="left" style="color: red;"><b>WELCOME TO MY CALCULATOR PROJECT</b></marquee>
+            <marquee behavior="scroll" direction="right" style="color: blueviolet;"><b>BY UTKARSH GUPTA</b></marquee>
+            <div class="input-box">
+                <input type="number" id="number1" placeholder="Enter number 1" required>
+                <input type="number" id="number2" placeholder="Enter number 2" required>
+            </div>
+            <div class="button-container">
+                <button onclick="sum()">+ (Addition)</button>
+                <button onclick="sub()">- (Subtraction)</button>
+                <button onclick="multiply()">* (Multiplication)</button>
+                <button onclick="divide()">/ (Division)</button>
+                <button onclick="remainder()">% (Remainder)</button>
+                <button onclick="clearInputs()">C (Clear)</button>
+            </div>
+            <p id="result" style="color:blue;"><b>RESULT:</b></p>
+        </div>
+    </div>
+    <script>
+        let UserInput = document.getElementById("number1");
+        let UserInput1 = document.getElementById("number2");
+        let resultElement = document.getElementById("result");
+
+        function sum() {
+            let result = parseFloat(UserInput.value) + parseFloat(UserInput1.value);
+            resultElement.innerHTML = "RESULT: " + result;
+        }
+
+        function sub() {
+            let result = parseFloat(UserInput.value) - parseFloat(UserInput1.value);
+            resultElement.innerHTML = "RESULT: " + result;
+        }
+
+        function multiply() {
+            let result = parseFloat(UserInput.value) * parseFloat(UserInput1.value);
+            resultElement.innerHTML = "RESULT: " + result;
+        }
+
+        function divide() {
+            if (UserInput1.value == 0) {
+                resultElement.innerHTML = "RESULT: Cannot divide by zero.";
+            } else {
+                let result = parseFloat(UserInput.value) / parseFloat(UserInput1.value);
+                resultElement.innerHTML = "RESULT: " + result;
+            }
+        }
+
+        function remainder() {
+            let result = parseFloat(UserInput.value) % parseFloat(UserInput1.value);
+            resultElement.innerHTML = "RESULT: " + result;
+        }
+
+        function clearInputs() {
+            UserInput.value = '';
+            UserInput1.value = '';
+            resultElement.innerHTML = "RESULT:";
+        }
+    </script>
+</body>
+</html>
